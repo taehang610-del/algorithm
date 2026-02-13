@@ -10,30 +10,25 @@ public class Main {
         int[][] A = new int[N][M];
         int[][] B = new int[N][M];
 
-        for (int i = 0 ; i < N ; i++) {
-            for (int j = 0 ; j < M ; j++) {
-                A[i][j] = sc.nextInt();
-            }
-        }
+        putArray(A,sc,N,M);
+        putArray(B,sc,N,M);
 
         for (int i = 0 ; i < N ; i++) {
             for (int j = 0 ; j < M ; j++) {
-                B[i][j] = sc.nextInt();
-            }
-        }
-
-        for (int i = 0 ; i < N ; i++) {
-            for (int j = 0 ; j < M ; j++) {
-                A[i][j] += B[i][j];
-            }
-        }
-
-        for (int i = 0 ; i < N ; i++) {
-            for (int j = 0 ; j < M ; j++) {
-                System.out.print(A[i][j] + " ");
+                System.out.print((A[i][j] + B[i][j]) + " ");
             }
             System.out.println();
         }
 
     }
+
+    public static void putArray(int[][] arr , Scanner sc , int row , int column)
+    {
+        for (int i = 0 ; i < row ; i++) {
+            for (int j = 0 ; j < column ; j++) {
+                arr[i][j] = sc.nextInt();
+            }
+        }
+    }
+
 }
